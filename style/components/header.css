@@ -1,13 +1,15 @@
 .header{
     background-color: var(--cl-primary1);
-    height: 100px;
+    
     color: var(--clr--primary2);
 }
 .title{
-    font-size: 2em;
+    font-size: 3em;
 }
 
-.page-states{
-    display: grid;
-    place-items: center;
+.header .btn-toggle-menu {
+    display: none;
+    background-color: var(--cl-primary1);
+    border: 0;
+    font-size: 2em;
 }

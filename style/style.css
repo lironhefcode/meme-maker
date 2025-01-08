@@ -10,6 +10,6 @@
 @import url(components/header.css);
 @import url(components/gallery.css);
 @import url(components/canvas.css);
-
+@import url(components/nav.css);
 
 @import url(setup/mq.css);

@@ -13,11 +13,14 @@
     <header class="header full main-layout ">
         <div class="header-content flex  align-center space-between">
             <div class="title">Meme Maker</div>
-            <div class="page-states ">
-                <div class="gallery">gallery</div>
-                <div class="maker">maker</div>
-                <div class="saved">saved</div>
-            </div>
+            <nav class="main-nav ">
+              <ul class="nav list flex clean-list">
+                <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery()"  >gallery</a></li>
+                <li><a href="#" onclick="chnageMode(this)" class="editor">editor</a></li>
+                <li><a href="# " class="save">save</a></li>
+              </ul>
+            </nav>
+            <button class="btn-toggle-menu" onclick="toggleMenu()">&#9776;</button>
         </div>
     </header>
     <section class="image-gallery">

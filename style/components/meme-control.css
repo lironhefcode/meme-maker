@@ -12,6 +12,10 @@
    padding: 2em;
    border-radius: 30px;
 }
+.meme-ediror-content{
+    flex-direction: column;
+    
+}
 .color-picker{
     background-color: rgb(80, 75, 75);
     border: 0;

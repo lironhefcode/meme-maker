@@ -1,0 +1,27 @@
+.main-nav>ul>li {
+    border-inline-end: 1px solid var(--clr-primary-1);
+}
+
+.main-nav>ul>li:first-child {
+    border-inline-start: 1px solid var(--clr-primary-1);
+}
+
+.main-nav a {
+    font-size: 1em;
+    display: grid;
+    place-items: center;
+    color: inherit;
+    text-decoration: none;
+
+    transition: box-shadow .4s;
+}
+
+.main-nav a:hover {
+    box-shadow: inset 0px -6px 0 var(--clr-primary2);
+}
+
+.main-nav a.active {
+    background-color: azure;
+    box-shadow: inset 0px -6px 0 var(--clr-primary2);
+    cursor: default;
+}
