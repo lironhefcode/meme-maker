@@ -3,8 +3,12 @@
         flex-direction: column;
         
     }
+   
     .meme-control{
         gap :20px;
+    }
+    .canvas-container{
+      width: calc(100vw - var(--layoutpadding) - var(--layoutpadding));
     }
 }
 @media (max-width:620px) {
@@ -14,4 +18,5 @@
   .meme-control{
     font-size: 1.6em;
   }
+ 
 }

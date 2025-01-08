@@ -1,6 +1,6 @@
 'use strict'
 var gElCanvas = document.querySelector('canvas')
-var gCtx = gElCanvas.getContext('2d')
+var gCtx 
 
 function rendermeme(){
   
@@ -71,8 +71,15 @@ function getPos(ev){
         y: ev.offsetY,
       }
 }
-function resizeCanvas(){
+function sizeCanvas(){
     const elContainer = document.querySelector('.canvas-container') 
-    gElCanvas.width = elContainer.clientWidth 
-    gElCanvas.height =elContainer.clientHeight
-}
+    console.log(elContainer)
+    gElCanvas.width = elContainer.clientWidth; // Use clientWidth for actual width
+    gElCanvas.height = elContainer.clientHeight; 
+    gCtx = gElCanvas.getContext('2d')
+    
+     rendermeme()
+    
+     
+} 
+   

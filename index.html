@@ -8,7 +8,7 @@
     <link href="style/style.css" rel="stylesheet">
 </head>
 
-<body class="main-layout">
+<body class="main-layout" onresize="sizeCanvas()"   >
 
     <header class="header full main-layout ">
         <div class="header-content flex  align-center space-between">
@@ -38,7 +38,9 @@
     </section>
     <section class="meme-editor   hide">
         <div class="meme-ediror-content flex space-between  ">
-            <canvas width="500" height="500" onmousedown="onDown(event)"></canvas>
+            <div class="canvas-container">
+            <canvas  onmousedown="onDown(event)"></canvas>
+        </div>
             <section class="meme-control flex space-between">
                 <input type="text" class="Meme-text rounded" oninput="onAddtext(this.value)">
                 <div class="btn-group1">
