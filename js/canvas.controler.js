@@ -71,3 +71,8 @@ function getPos(ev){
         y: ev.offsetY,
       }
 }
+function resizeCanvas(){
+    const elContainer = document.querySelector('.canvas-container') 
+    gElCanvas.width = elContainer.clientWidth 
+    gElCanvas.height =elContainer.clientHeight
+}

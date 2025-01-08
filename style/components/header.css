@@ -1,0 +1,13 @@
+.header{
+    background-color: var(--cl-primary1);
+    height: 100px;
+    color: var(--clr--primary2);
+}
+.title{
+    font-size: 2em;
+}
+
+.page-states{
+    display: grid;
+    place-items: center;
+}

@@ -1,0 +1,47 @@
+
+
+.Meme-text{
+    height: 3em;
+}
+.meme-control{
+    background-color: rgb(80, 75, 75);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   font-size: 2em;
+   padding: 50px;
+   border-radius: 30px;
+}
+.color-picker{
+    background-color: rgb(80, 75, 75);
+    border: 0;
+    width: 3em;
+    height: 3em;
+    
+}
+.meme-control .increase{
+    font-size: inherit;
+    width: 2em;
+    background-color: var(--clr-primary3);
+}
+.meme-control .decrease{
+    font-size: inherit;
+    width: 2em;
+    background-color: var(--cl-primary1) ;
+}
+.meme-control  .add-line{
+    font-size: inherit;
+    border: 0;
+    background-color: var(--clr-primary3);
+}
+.meme-control .changeLine{
+    font-size: inherit;
+    background-color: var(--cl-primary1) ;
+}
+.meme-control .downLoad{
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    padding: 2px;
+    background-color:var(--clr-primary3) ;
+}

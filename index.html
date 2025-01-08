@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="style/style.css" rel="stylesheet">
 </head>
-<body>
-    <header><h1>Meme Maker</h1> <h3>gallery</h3> <h3>maker</h3></header>
+
+<body class="main-layout">
+
+    <header class="header full main-layout ">
+        <div class="header-content flex  align-center space-between">
+            <div class="title">Meme Maker</div>
+            <div class="page-states ">
+                <div class="gallery">gallery</div>
+                <div class="maker">maker</div>
+                <div class="saved">saved</div>
+            </div>
+        </div>
+    </header>
     <section class="image-gallery">
-        <article></article>
-        <article class="meme-imgae">
-            <img src="imgs/1.jpg" onclick="onClickImage(this)">
-        </article>
-        <article class="meme-imgae">
-            <img src="imgs/2.jpg" onclick="onClickImage(this)">
-        </article>
-        <article class="meme-imgae">
-            <img src="imgs/4.jpg" onclick="onClickImage(this)">
-        </article>
-        <article class="meme-imgae">
-            <img src="imgs/3.jpg" onclick="onClickImage(this)">
-        </article>
+        <div class="gallery-content">
+            <article class="meme-imgae">
+                <img src="imgs/1.jpg" onclick="onClickImage(this)">
+            </article>
+            <article class="meme-imgae">
+                <img src="imgs/2.jpg" onclick="onClickImage(this)">
+            </article>
+            <article class="meme-imgae">
+                <img src="imgs/4.jpg" onclick="onClickImage(this)">
+            </article>
+            <article class="meme-imgae">
+                <img src="imgs/3.jpg" onclick="onClickImage(this)">
+            </article>
+        </div>
     </section>
-    <section class="meme-editor hide">
-        <canvas width="500" height="500" onmousedown="onDown(event)"></canvas>
-        <section class="editor-control">
-        <input type="text" class="Meme-text" oninput="onAddtext(this.value)">
-        <input type="color" onchange="onchangeColor(this.value)">
-        <button onclick="onIncreaseFont()">increase</button>
-        <button onclick="oDencreaseFont()">decrease</button>
-        <button onclick="onAddLine()">Add Line</button>
-        <button onclick="onChangeLine()">change Line</button>
-        <a href="#" onclick="onDownloadMeme(this)">downLoad</a>
-        </section>
+    <section class="meme-editor   hide">
+        <div class="meme-ediror-content flex space-between  ">
+            <canvas width="500" height="500" onmousedown="onDown(event)"></canvas>
+            <section class="meme-control flex space-between">
+                <input type="text" class="Meme-text rounded" oninput="onAddtext(this.value)">
+                <div class="btn-group1">
+                    <input type="color" class="color-picker " onchange="onchangeColor(this.value)">
+                    <button class="increase" onclick="onIncreaseFont()">+</button>
+                    <button class="decrease" onclick="oDencreaseFont()">-</button>
+                </div>
+                <div class="btn-group2">
+                <button class="add-line rounded" onclick="onAddLine()">Add Line</button>
+                <button class="changeLine rounded" onclick="onChangeLine()">change Line</button>
+                <a href="#" class="downLoad rounded" onclick="onDownloadMeme(this)">download</a>
+            </div>
+            </section>
+        </div>
     </section>
     <section class="saved-meme hide"></section>
+
     <script src='js/gallarey-controler.js'></script>
     <script src="js/canvas.controler.js"></script>
     <script src="js/meme-service.js"></script>
 </body>
+
 </html>

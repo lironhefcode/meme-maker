@@ -1,0 +1,17 @@
+@media ( max-width:1121px) {
+    .meme-ediror-content{
+        flex-direction: column;
+        
+    }
+    .meme-control{
+        gap :20px;
+    }
+}
+@media (max-width:620px) {
+  html{
+    font-size: 14px;
+  }
+  .meme-control{
+    font-size: 1.6em;
+  }
+}
