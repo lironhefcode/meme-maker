@@ -24,7 +24,7 @@
         </article>
     </section>
     <section class="meme-editor hide">
-        <canvas width="500" height="500"></canvas>
+        <canvas width="500" height="500" onmousedown="onDown(event)"></canvas>
         <section class="editor-control">
         <input type="text" class="Meme-text" oninput="onAddtext(this.value)">
         <input type="color" onchange="onchangeColor(this.value)">

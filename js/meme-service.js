@@ -61,5 +61,20 @@ function changeLine(){
 }
 function addLocation(xStart,yStart,xEnd,yEnd,line){
     console.log(line)
-    line['location'] ={xStart,yStart,xEnd,yEnd}
+    line['location'] ={xStart,yStart,xEnd,yEnd,line}
+}
+function isTextClick(clickedPos){
+    
+    gMeme.lines.forEach((line,index) =>{
+        const {xStart,yStart,xEnd,yEnd} = line.location
+        
+        if((clickedPos.x>xStart&&clickedPos.x<xEnd)&&clickedPos.y>yStart&&clickedPos.y<yEnd){
+            deslectLine()
+            line.selected = true
+            gMeme.selectedLineIdx = index
+        }
+    })
+}
+function deslectLine(){
+    gMeme.lines[gMeme.selectedLineIdx].selected = false
 }

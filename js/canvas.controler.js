@@ -16,7 +16,7 @@ function rendermeme(){
         gCtx.fillText(line.txt,10+space,80+space)
         if(line.selected)  gCtx.strokeRect(5+space,84+space,gCtx.measureText(line.txt).width+10,-line.size +3)
             console.log(line)
-        addLocation(10+space,80+space,gCtx.measureText(line.txt).width,80+space-line.size,line)
+        addLocation(10+space,80+space-line.size,gCtx.measureText(line.txt).width,80+space,line)
         
         space += 20
     });
@@ -59,4 +59,15 @@ function onChangeLine(){
     changeLine()
     changeTextValue()
     rendermeme()
+}
+function onDown(ev){
+   const pos = getPos(ev)
+   isTextClick(pos)
+   rendermeme()
+}
+function getPos(ev){
+    return  {
+        x: ev.offsetX,
+        y: ev.offsetY,
+      }
 }
