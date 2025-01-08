@@ -36,7 +36,7 @@ function decreaseFont(){
 function _createLine(){
    gMeme.lines.push( {
         txt : 'add text',
-        color : '',
+        color : 'black',
         size: 24,
         selected : (gMeme.lines.length === 0)
     }
@@ -58,4 +58,8 @@ function changeLine(){
         gMeme.lines[gMeme.selectedLineIdx].selected = true
     }
     
+}
+function addLocation(xStart,yStart,xEnd,yEnd,line){
+    console.log(line)
+    line['location'] ={xStart,yStart,xEnd,yEnd}
 }

@@ -15,7 +15,8 @@ function rendermeme(){
        
         gCtx.fillText(line.txt,10+space,80+space)
         if(line.selected)  gCtx.strokeRect(5+space,84+space,gCtx.measureText(line.txt).width+10,-line.size +3)
-
+            console.log(line)
+        addLocation(10+space,80+space,gCtx.measureText(line.txt).width,80+space-line.size,line)
         
         space += 20
     });
