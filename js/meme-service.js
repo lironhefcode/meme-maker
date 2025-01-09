@@ -5,7 +5,14 @@ var gImgs = [{id: 1, url: 'imgs/1.jpg', keywords: ['funny', 'cat']},
 var gMeme = { 
 selectedImgId: 0, 
 selectedLineIdx: 0, 
-lines: [ 
+lines: [ {
+    txt : 'add text',
+    color : 'black',
+    size: 24,
+    font: 'arial',
+    selected : true,
+    isDrag : false
+}
   
 ] 
 } 
@@ -20,8 +27,9 @@ function getImg(){
 }
 function addLine(txt,){
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
-    
-
+}
+function setFont(font){
+    gMeme.lines[gMeme.selectedLineIdx].font = font
 }
 function setColor(color){
     gMeme.lines[gMeme.selectedLineIdx].color =color
@@ -38,12 +46,20 @@ function _createLine(){
         txt : 'add text',
         color : 'black',
         size: 24,
-        selected : (gMeme.lines.length === 0)
+        font: 'arial',
+        selected : (gMeme.lines.length === 0),
+        isDrag : false
     }
     )
 }
+function getColor(){
+    return gMeme.lines[gMeme.selectedLineIdx].color
+}
 function getText(){
     return gMeme.lines[gMeme.selectedLineIdx].txt
+}
+function getFont(){
+    return gMeme.lines[gMeme.selectedLineIdx].font
 }
 function changeLine(){
     console.log(gMeme.selectedLineIdx ===  gMeme.lines.length-1)
@@ -60,7 +76,7 @@ function changeLine(){
     
 }
 function addLocation(xStart,yStart,xEnd,yEnd,line){
-    console.log(line)
+    console.log(xStart,yStart,xEnd,yEnd)
     line['location'] ={xStart,yStart,xEnd,yEnd,line}
 }
 function isTextClick(clickedPos){
@@ -68,13 +84,26 @@ function isTextClick(clickedPos){
     gMeme.lines.forEach((line,index) =>{
         const {xStart,yStart,xEnd,yEnd} = line.location
         
-        if((clickedPos.x>xStart&&clickedPos.x<xEnd)&&clickedPos.y>yStart&&clickedPos.y<yEnd){
+        if((clickedPos.x>xStart&&clickedPos.x<xEnd)&&clickedPos.y<yStart&&clickedPos.y>yEnd){
             deslectLine()
             line.selected = true
+            line.isDrag = true
             gMeme.selectedLineIdx = index
+           
         }
     })
+   
 }
 function deslectLine(){
     gMeme.lines[gMeme.selectedLineIdx].selected = false
+}
+function setLineDragOff(){
+    gMeme.lines[gMeme.selectedLineIdx].isDrag = false
+}
+function isDrag(){
+   return gMeme.lines[gMeme.selectedLineIdx].isDrag
+}
+function changeStartLocation(xStart,yStart){
+    gMeme.lines[gMeme.selectedLineIdx].location.xStart = xStart
+    gMeme.lines[gMeme.selectedLineIdx].location.yStart = yStart
 }

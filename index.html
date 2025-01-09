@@ -42,14 +42,24 @@
     <section class="meme-editor   hide">
         <div class="meme-ediror-content flex space-between  ">
             <div class="canvas-container">
-            <canvas  onmousedown="onDown(event)"></canvas>
+            <canvas  onmousedown="onDown(event)" onmousemove="onMove(event)" onmouseup="onUp()"
+            ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()"></canvas>
         </div>
             <div class="meme-control flex space-between">
                 <input type="text" class="Meme-text rounded" oninput="onAddtext(this.value)">
                 <div class="btn-group1">
-                    <input type="color" class="color-picker " onchange="onchangeColor(this.value)">
                     <button class="increase" onclick="onIncreaseFont()">+</button>
                     <button class="decrease" onclick="oDencreaseFont()">-</button>
+                    <select class="font-value" onchange="onChangeFont(this.value)">
+                        <option value="arial">arial</option>
+                        <option value="'Courier New'">'Courier New'</option>
+                        <option value="'Times New Roman'">'Times New Roman'</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="system-ui">system-ui</option>
+                    </select>
+                </div>
+                <div class="group3">
+                    <input type="color" class="color-picker" onchange="onchangeColor(this.value)">
                 </div>
                 <div class="btn-group2">
                 <button class="add-line rounded" onclick="onAddLine()">Add Line</button>
@@ -61,9 +71,9 @@
     </section>
     <section class="saved-meme hide"></section>
 
+    <script src="js/meme-service.js"></script>
     <script src='js/gallarey-controler.js'></script>
     <script src="js/canvas.controler.js"></script>
-    <script src="js/meme-service.js"></script>
 </body>
 
 </html>
