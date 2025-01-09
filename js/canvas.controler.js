@@ -66,6 +66,7 @@ function onAddLine(){
 }
 
 function changeValues(){
+    
     document.querySelector('.font-value').value = getFont()
   document.querySelector('.Meme-text').value = getText()
   document.querySelector('.color-picker').value = getColor()
@@ -114,7 +115,7 @@ function sizeCanvas(){
 
 function onDown(ev){
    const pos = getPos(ev)
-   console.log(pos)
+   
    isTextClick(pos)
    rendermeme()
 }
@@ -140,4 +141,25 @@ function onMove(ev){
 function onUp(){
     
     setLineDragOff()
+}
+function onDelteLine(){
+    delteLine()
+    rendermeme()
+}
+
+function onAliganLeft(){
+    aliganLeft()
+    rendermeme()
+}
+function onAliganCenter(){
+    aligan(gElCanvas.width/2)
+    rendermeme()
+}
+function onAliganCenter(){
+    aliganCenter(gElCanvas.width/2,gCtx)
+    rendermeme()
+}
+function onAliganRight(){
+    aliganRight(gElCanvas.width,gCtx)
+    rendermeme()
 }

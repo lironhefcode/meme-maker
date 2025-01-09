@@ -7,7 +7,7 @@ selectedImgId: 0,
 selectedLineIdx: 0, 
 lines: [ {
     txt : 'add text',
-    color : 'black',
+    color : '#000000',
     size: 24,
     font: 'arial',
     selected : true,
@@ -44,7 +44,7 @@ function decreaseFont(){
 function _createLine(){
    gMeme.lines.push( {
         txt : 'add text',
-        color : 'black',
+        color : '#000000',
         size: 24,
         font: 'arial',
         selected : (gMeme.lines.length === 0),
@@ -62,7 +62,7 @@ function getFont(){
     return gMeme.lines[gMeme.selectedLineIdx].font
 }
 function changeLine(){
-    console.log(gMeme.selectedLineIdx ===  gMeme.lines.length-1)
+   
     if(gMeme.selectedLineIdx ===  gMeme.lines.length-1){
         gMeme.lines[gMeme.selectedLineIdx].selected = false
         gMeme.selectedLineIdx = 0
@@ -89,7 +89,7 @@ function isTextClick(clickedPos){
             line.selected = true
             line.isDrag = true
             gMeme.selectedLineIdx = index
-           
+            changeValues()
         }
     })
    
@@ -106,4 +106,27 @@ function isDrag(){
 function changeStartLocation(xStart,yStart){
     gMeme.lines[gMeme.selectedLineIdx].location.xStart = xStart
     gMeme.lines[gMeme.selectedLineIdx].location.yStart = yStart
+}
+
+function  delteLine(){
+    gMeme.lines.splice(gMeme.selectedLineIdx,1)
+    if(gMeme.selectedLineIdx>= gMeme.lines.length ){
+        gMeme.selectedLineIdx = 0
+    }
+    gMeme.lines[gMeme.selectedLineIdx].selected = true
+}
+function aliganLeft(alignTo){
+    gMeme.lines.forEach(line =>
+        line.location.xStart = 10
+    )
+}
+function aliganCenter(center,ctx){
+    gMeme.lines.forEach(line =>
+        line.location.xStart = center- (ctx.measureText(line.txt).width/2)
+    )
+}
+function aliganRight(width,ctx){
+    gMeme.lines.forEach(line =>
+        line.location.xStart = width- (ctx.measureText(line.txt).width)
+    )
 }

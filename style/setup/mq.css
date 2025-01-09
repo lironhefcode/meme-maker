@@ -1,8 +1,6 @@
 @media (max-width:650px) 
 {
-  html{
-    font-size: 13px;
-  }
+
   .meme-control{
     font-size: 1.2em;
   }
@@ -50,9 +48,7 @@
 
 
 @media (min-width:650px) {
-  html{
-    font-size: 14px;
-  }
+
   .meme-control{
     font-size: 1.4em;
   }

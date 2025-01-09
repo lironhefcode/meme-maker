@@ -22,25 +22,13 @@
 .color-picker{
     background-color: rgb(80, 75, 75);
     border: 0;
-    width: 3em;
-    height: 3em;
+    width: 4em;
+    height: 4em;
     
 }
-.meme-control .increase{
-    font-size: inherit;
-    width: 2em;
-    
-}
-.meme-control .decrease{
-    
-    width: 2em;
 
-}
-.meme-control  .add-line{
-    font-size: inherit;
-    border: 0;
-  
-}
+
+
 
 .meme-control .downLoad{
     text-decoration: none;
@@ -50,11 +38,16 @@
     background-color: var(--clr-primary3);
  
 }
-.meme-control .changeLine{
-    border: 0;
-}
+
 .meme-control button{
     color: inherit;
     font-size: inherit;
     background-color: var(--clr-primary3);
+    width: 4em;
+    height: 2em;
+    border: 0;
+}
+.meme-control .font-value{
+    width: 4em;
+    height: 2em;
 }
