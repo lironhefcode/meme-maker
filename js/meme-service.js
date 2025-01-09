@@ -24,6 +24,16 @@ selectedLineIdx: 0,
 lines: [ 
 ] 
 } 
+const STORAGE_KEY = 'imagedb'
+
+function saveImage(imgUrl){
+    const imgData = loadFromStorage(STORAGE_KEY) 
+    imgData.push(imgUrl)
+    saveToStorage(STORAGE_KEY,imgData)
+}
+function getSavedImages(){
+    return loadFromStorage(STORAGE_KEY)
+}
 function init(){
     gMeme.lines = [ {
         txt : 'add text',

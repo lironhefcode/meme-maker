@@ -1,6 +1,7 @@
 
-gCurrNav =  document.querySelector('.gallery')
-gCurrPage =  document.querySelector('.image-gallery')
+var gCurrNav =  document.querySelector('.gallery')
+var gCurrPage =  document.querySelector('.image-gallery')
+
 
 
 function onClickImage(img){
@@ -38,4 +39,27 @@ function goToEditor(el = document.querySelector('.editor')){
     gCurrPage = elEditor
     chnageMode(el)
   
+}
+function goToSaved(el){
+    chnageMode(el)
+    const elSaved = document.querySelector('.saved-meme')
+    elSaved.classList.remove('hide')
+    gCurrPage.classList.add('hide')
+    gCurrPage = elSaved
+    const images = getSavedImages()
+    
+    let strHtml =''
+    images.forEach(image => {
+      strHtml +=  `<article class="meme-image"> 
+                <img src="${image}" > 
+            </article>`
+    });
+    document.querySelector('.saved-meme-content').innerHTML = strHtml
+}
+function onClikedSavedImg(el){
+    document.querySelector('.saved-meme').classList.add('hide')
+    document.querySelector('.meme-editor').classList.remove('hide')
+    gCurrPage = document.querySelector('.meme-editor')
+    sizeCanvas()
+    renderSaved(el)
 }

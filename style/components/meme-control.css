@@ -20,22 +20,22 @@
 
 }
 
-
-
 .meme-control .downLoad {
     text-decoration: none;
     font-size: 1.6em;
     background-color: var(--clr-primary3);
     color: var(--clr--primary2);
     border-radius: 10px;
-    width: 100%;
+    text-align: center;
+}
 
-}
-.meme-control .group1{
+.meme-control .group1 {
     display: grid;
-    grid-template-columns: repeat(3,4em);
+    grid-template-columns: repeat(3, 4em);
 }
-.meme-control .group1 button {
+
+.meme-control .group1 button,
+.share {
     font-size: 1.6em;
     background-color: var(--clr-primary3);
     color: var(--clr--primary2);
@@ -52,16 +52,37 @@
     width: 100%;
     gap: 3px;
 }
-.font-ediotr .btn-font{
+
+.font-ediotr .btn-font {
     font-size: 1.6em;
     background-color: var(--clr-primary3);
     color: var(--clr--primary2);
     border-radius: 10px;
 }
-.font-ediotr .font-value{
+
+.font-ediotr .font-value {
     grid-column: 2/-1;
 }
-.font-ediotr .color-picker{
+
+.font-ediotr .color-picker {
     height: 1.6em;
     width: auto;
+}
+
+.btn-group2 {
+    gap: 10px;
+}
+
+.share {
+    background-color: blue;
+    width: 2em;
+    color: white;
+}
+.btn-group2  .save-image{
+    font-size: 1.6em;
+    background-color: var(--clr-primary3);
+    color: var(--clr--primary2);
+    border-radius: 10px;
+    width: 100%;
+    border: 0;
 }

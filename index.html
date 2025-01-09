@@ -8,7 +8,7 @@
     <link href="style/style.css" rel="stylesheet">
 </head>
 
-<body class="main-layout"  onresize="sizeCanvas()"   >
+<body class="main-layout"   onresize="sizeCanvas()"   >
 
     <header class="header full main-layout ">
         <div class="header-content flex  align-center space-between">
@@ -17,7 +17,7 @@
               <ul class="nav list flex clean-list">
                 <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery(this)"  >gallery</a></li>
                 <li><a href="#" onclick="chnageMode(this), goToEditor(this)" class="editor">editor</a></li>
-                <li><a href="# " class="save">save</a></li>
+                <li><a href="# " class="save" onclick="goToSaved(this)">save</a></li>
               </ul>
             </nav>
             <button class="btn-toggle-menu" onclick="toggleMenu()">&#9776;</button>
@@ -99,10 +99,10 @@
                     
                     <button class="increase btn-font" onclick="onIncreaseFont()">&#128474;</button>
                     <button class="decrease btn-font" onclick="oDencreaseFont()">&#128475;</button>
-                    <input type="color" class="color-picker btn-font" onchange="onchangeColor(this.value)">
                     <button class="aligan-right btn-font" onclick="onAliganLeft()"><i class="fa-solid fa-align-left"></i></button>
                     <button class="aligan-center btn-font" onclick="onAliganCenter()"><i class="fa-solid fa-align-center"></i></button>
                     <button class="aligan-left btn-font" onclick="onAliganRight()"><i class="fa-solid fa-align-right"></i></button>
+                    <input type="color" class="color-picker btn-font" onchange="onchangeColor(this.value)">
                     <select class="font-value btn-font" onchange="onChangeFont(this.value)">
                         <option value="arial">arial</option>
                         <option value="'Courier New'">'Courier New'</option>
@@ -111,14 +111,27 @@
                         <option value="system-ui">system-ui</option>
                     </select>
                 </div>
-                <div class="btn-group2">
+                <div class="btn-group2 flex">
+                <button class="save-image" onclick="onSaveImage()">Save</button>
                 <a href="#" class="downLoad rounded" onclick="onDownloadMeme(this)">download</a>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="onShare(event)">
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="share" type="submit"><i class="fa-brands fa-facebook-f"></i></button>
+                  </form>
             </div>
         </div>
         </div>
     </section>
-    <section class="saved-meme hide"></section>
+    <section class="saved-meme hide">
+        <div class="saved-meme-content">
+
+        </div>
+    </section>
+
+
+
     <script src="https://kit.fontawesome.com/64336c7dd3.js" crossorigin="anonymous"></script>
+    <script src="/js/meme-storage.js"></script>
     <script src="js/meme-service.js"></script>
     <script src='js/gallarey-controler.js'></script>
     <script src="js/canvas.controler.js"></script>

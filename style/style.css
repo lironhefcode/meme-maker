@@ -11,5 +11,7 @@
 @import url(components/gallery.css);
 @import url(components/canvas.css);
 @import url(components/nav.css);
+@import url(components/savedmemes.css);
 
 @import url(setup/mq.css);
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
