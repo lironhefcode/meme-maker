@@ -10,7 +10,8 @@ function onClickImage(img){
     gCurrPage = document.querySelector('.meme-editor')
     selectedImg(img.src)
     sizeCanvas()
-    
+    init()
+    changeValues()
     rendermeme()
     goToEditor()
 }

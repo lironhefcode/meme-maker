@@ -1,53 +1,67 @@
-
-
-.Meme-text{
+.Meme-text {
     height: 3em;
 }
-.meme-control{
+
+.meme-control {
     background-color: rgb(80, 75, 75);
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-   font-size: 2em;
-   padding: 2em;
-   border-radius: 30px;
-   color: var(--clr--primary2);
-   gap: 20px;
-    
+    font-size: 2em;
+    padding: 2em;
+    border-radius: 30px;
+    color: var(--clr--primary2);
+    gap: 20px;
+
 }
-.meme-ediror-content{
+
+.meme-ediror-content {
     flex-direction: column;
-    
-}
-.color-picker{
-    background-color: rgb(80, 75, 75);
-    border: 0;
-    width: 4em;
-    height: 4em;
-    
+
 }
 
 
 
-
-.meme-control .downLoad{
+.meme-control .downLoad {
     text-decoration: none;
-    color: inherit;
-    border: 2px solid black;
-    padding: 2px;
+    font-size: 1.6em;
     background-color: var(--clr-primary3);
- 
+    color: var(--clr--primary2);
+    border-radius: 10px;
+    width: 100%;
+
+}
+.meme-control .group1{
+    display: grid;
+    grid-template-columns: repeat(3,4em);
+}
+.meme-control .group1 button {
+    font-size: 1.6em;
+    background-color: var(--clr-primary3);
+    color: var(--clr--primary2);
+    border-radius: 10px;
+    width: 100%;
 }
 
-.meme-control button{
-    color: inherit;
-    font-size: inherit;
-    background-color: var(--clr-primary3);
-    width: 4em;
-    height: 2em;
-    border: 0;
+.font-ediotr {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-radius: 15px;
+    padding: 0.4em;
+    width: 100%;
+    gap: 3px;
 }
-.meme-control .font-value{
-    width: 4em;
-    height: 2em;
+.font-ediotr .btn-font{
+    font-size: 1.6em;
+    background-color: var(--clr-primary3);
+    color: var(--clr--primary2);
+    border-radius: 10px;
+}
+.font-ediotr .font-value{
+    grid-column: 2/-1;
+}
+.font-ediotr .color-picker{
+    height: 1.6em;
+    width: auto;
 }

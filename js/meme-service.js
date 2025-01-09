@@ -1,21 +1,42 @@
-var gImgs = [{id: 1, url: 'imgs/1.jpg', keywords: ['funny', 'cat']},
-{id:2, url: 'imgs/2.jpg', keywords: ['funny', 'cat']},
-{id: 3, url: 'imgs/3.jpg', keywords: ['funny', 'cat']},
-{id: 4, url: 'imgs/4.jpg', keywords: ['funny', 'cat']}] 
+var gImgs = [
+    { id: 1, url: 'imgs/1.jpg', keywords: ['funny', 'cat'] },
+    { id: 2, url: 'imgs/2.jpg', keywords: ['funny', 'cat'] },
+    { id: 3, url: 'imgs/3.jpg', keywords: ['funny', 'cat'] },
+    { id: 4, url: 'imgs/4.jpg', keywords: ['funny', 'cat'] },
+    { id: 5, url: 'imgs/5.jpg', keywords: ['funny', 'dog'] },
+    { id: 6, url: 'imgs/6.jpg', keywords: ['cute', 'cat'] },
+    { id: 7, url: 'imgs/7.jpg', keywords: ['funny', 'cat', 'sleep'] },
+    { id: 8, url: 'imgs/8.jpg', keywords: ['adorable', 'dog'] },
+    { id: 9, url: 'imgs/9.jpg', keywords: ['funny', 'cat'] },
+    { id: 10, url: 'imgs/10.jpg', keywords: ['playful', 'dog'] },
+    { id: 11, url: 'imgs/11.jpg', keywords: ['funny', 'cat'] },
+    { id: 12, url: 'imgs/12.jpg', keywords: ['lazy', 'cat'] },
+    { id: 13, url: 'imgs/13.jpg', keywords: ['curious', 'dog'] },
+    { id: 14, url: 'imgs/14.jpg', keywords: ['funny', 'cat', 'jump'] },
+    { id: 15, url: 'imgs/15.jpg', keywords: ['cute', 'rabbit'] },
+    { id: 16, url: 'imgs/16.jpg', keywords: ['funny', 'cat'] },
+    { id: 17, url: 'imgs/17.jpg', keywords: ['playful', 'kitten'] },
+    { id: 18, url: 'imgs/18.jpg', keywords: ['adorable', 'puppy'] }
+  ]
 var gMeme = { 
 selectedImgId: 0, 
 selectedLineIdx: 0, 
-lines: [ {
-    txt : 'add text',
-    color : '#000000',
-    size: 24,
-    font: 'arial',
-    selected : true,
-    isDrag : false
-}
-  
+lines: [ 
 ] 
 } 
+function init(){
+    gMeme.lines = [ {
+        txt : 'add text',
+        color : '#000000',
+        size: 24,
+        font: 'arial',
+        selected : true,
+        isDrag : false
+    }
+      
+    ] 
+    gMeme.selectedLineIdx =0
+}
 function getMeme(){
     return gMeme
 }
@@ -76,7 +97,7 @@ function changeLine(){
     
 }
 function addLocation(xStart,yStart,xEnd,yEnd,line){
-    console.log(xStart,yStart,xEnd,yEnd)
+    
     line['location'] ={xStart,yStart,xEnd,yEnd,line}
 }
 function isTextClick(clickedPos){
@@ -110,12 +131,13 @@ function changeStartLocation(xStart,yStart){
 
 function  delteLine(){
     gMeme.lines.splice(gMeme.selectedLineIdx,1)
+    if(gMeme.lines.length === 0) return
     if(gMeme.selectedLineIdx>= gMeme.lines.length ){
         gMeme.selectedLineIdx = 0
     }
     gMeme.lines[gMeme.selectedLineIdx].selected = true
 }
-function aliganLeft(alignTo){
+function aliganLeft(){
     gMeme.lines.forEach(line =>
         line.location.xStart = 10
     )
