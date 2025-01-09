@@ -1,5 +1,5 @@
 .header{
-    background-color: var(--cl-primary1);
+    background-color: #403d37;
     
     color: var(--clr--primary2);
 }
@@ -9,7 +9,7 @@
 
 .header .btn-toggle-menu {
     display: none;
-    background-color: var(--cl-primary1);
+    background-color: var(--clr-primary3);
     border: 0;
     font-size: 2em;
 }

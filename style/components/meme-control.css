@@ -11,6 +11,9 @@
    font-size: 2em;
    padding: 2em;
    border-radius: 30px;
+   color: var(--clr--primary2);
+   gap: 20px;
+    
 }
 .meme-ediror-content{
     flex-direction: column;
@@ -26,26 +29,32 @@
 .meme-control .increase{
     font-size: inherit;
     width: 2em;
-    background-color: var(--clr-primary3);
+    
 }
 .meme-control .decrease{
-    font-size: inherit;
+    
     width: 2em;
-    background-color: var(--cl-primary1) ;
+
 }
 .meme-control  .add-line{
     font-size: inherit;
     border: 0;
-    background-color: var(--clr-primary3);
+  
 }
-.meme-control .changeLine{
-    font-size: inherit;
-    background-color: var(--cl-primary1) ;
-}
+
 .meme-control .downLoad{
     text-decoration: none;
-    color: black;
+    color: inherit;
     border: 2px solid black;
     padding: 2px;
-    background-color:var(--clr-primary3) ;
+    background-color: var(--clr-primary3);
+ 
+}
+.meme-control .changeLine{
+    border: 0;
+}
+.meme-control button{
+    color: inherit;
+    font-size: inherit;
+    background-color: var(--clr-primary3);
 }

@@ -6,6 +6,7 @@ function rendermeme(){
   
     const img = new Image()
     img.src = getImg()
+    img.onload = () =>{
     const meme = getMeme()
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     let space =0
@@ -20,6 +21,8 @@ function rendermeme(){
         
         space += 20
     });
+    }
+   
 }   
 function onAddtext(text){
     addLine(text)
@@ -73,13 +76,11 @@ function getPos(ev){
 }
 function sizeCanvas(){
     const elContainer = document.querySelector('.canvas-container') 
-    console.log(elContainer)
+    
     gElCanvas.width = elContainer.clientWidth; // Use clientWidth for actual width
     gElCanvas.height = elContainer.clientHeight; 
     gCtx = gElCanvas.getContext('2d')
-    
-     rendermeme()
-    
-     
+    const meme = getMeme()
+    if(meme.selectedImgId !== 0) rendermeme()   
 } 
    

@@ -16,7 +16,7 @@
   .main-nav {
       position: fixed;
       top: 60px;
-      background: var(--clr-primary3);
+      background: var(--clr-primary4);
       left: 0;
       width: 100%;
   
@@ -42,7 +42,7 @@
   }
   
   .main-nav a {
-    color: rgb(92, 83, 83);
+    
     font-size: 16px;
     padding: 1em;
   }
@@ -76,7 +76,7 @@
         gap :20px;
       }
       .canvas-container{
-        width: 45vw;
-        height: 300px;
+        width: 500px;
+        height: 500px;
     }
   }

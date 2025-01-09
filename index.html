@@ -8,15 +8,15 @@
     <link href="style/style.css" rel="stylesheet">
 </head>
 
-<body class="main-layout" onresize="sizeCanvas()"   >
+<body class="main-layout"  onresize="sizeCanvas()"   >
 
     <header class="header full main-layout ">
         <div class="header-content flex  align-center space-between">
             <div class="title">Meme Maker</div>
             <nav class="main-nav ">
               <ul class="nav list flex clean-list">
-                <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery()"  >gallery</a></li>
-                <li><a href="#" onclick="chnageMode(this)" class="editor">editor</a></li>
+                <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery(this)"  >gallery</a></li>
+                <li><a href="#" onclick="chnageMode(this), goToEditor(this)" class="editor">editor</a></li>
                 <li><a href="# " class="save">save</a></li>
               </ul>
             </nav>
@@ -44,7 +44,7 @@
             <div class="canvas-container">
             <canvas  onmousedown="onDown(event)"></canvas>
         </div>
-            <section class="meme-control flex space-between">
+            <div class="meme-control flex space-between">
                 <input type="text" class="Meme-text rounded" oninput="onAddtext(this.value)">
                 <div class="btn-group1">
                     <input type="color" class="color-picker " onchange="onchangeColor(this.value)">
@@ -56,7 +56,7 @@
                 <button class="changeLine rounded" onclick="onChangeLine()">change Line</button>
                 <a href="#" class="downLoad rounded" onclick="onDownloadMeme(this)">download</a>
             </div>
-            </section>
+        </div>
         </div>
     </section>
     <section class="saved-meme hide"></section>

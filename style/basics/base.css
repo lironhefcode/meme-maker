@@ -5,6 +5,7 @@ img{
     width: 100%;
 }
 body{
-    background-color: var(--clr-primary3);
+    background-color: #222322;
     margin: 0;
+    
 }

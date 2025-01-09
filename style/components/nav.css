@@ -21,7 +21,7 @@
 }
 
 .main-nav a.active {
-    background-color: azure;
+    background-color: var(--clr-primary3);
     box-shadow: inset 0px -6px 0 var(--clr-primary2);
     cursor: default;
 }
