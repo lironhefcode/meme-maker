@@ -28,7 +28,8 @@ const STORAGE_KEY = 'imagedb'
 
 function saveImage(imgUrl){
     const imgData = loadFromStorage(STORAGE_KEY) 
-    imgData.push(imgUrl)
+    imgData.push({'meme':gMeme,'url':imgUrl})
+    console.log(imgData)
     saveToStorage(STORAGE_KEY,imgData)
 }
 function getSavedImages(){
@@ -108,7 +109,7 @@ function changeLine(){
 }
 function addLocation(xStart,yStart,xEnd,yEnd,line){
     
-    line['location'] ={xStart,yStart,xEnd,yEnd,line}
+    line['location'] ={xStart,yStart,xEnd,yEnd}
 }
 function isTextClick(clickedPos){
     
@@ -161,4 +162,10 @@ function aliganRight(width,ctx){
     gMeme.lines.forEach(line =>
         line.location.xStart = width- (ctx.measureText(line.txt).width)
     )
+}
+
+
+function setMemeToSaved(idx){
+    const savedImages  = loadFromStorage(STORAGE_KEY)
+    gMeme = savedImages[idx].meme
 }

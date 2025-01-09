@@ -1,6 +1,7 @@
 function saveToStorage(key, val) {
+    
     if(loadFromStorage(key) === null) initStorage(key)
-    localStorage.setItem(key, JSON.stringify(val))
+    else localStorage.setItem(key, JSON.stringify(val))
     
 }
 

@@ -49,17 +49,18 @@ function goToSaved(el){
     const images = getSavedImages()
     
     let strHtml =''
-    images.forEach(image => {
-      strHtml +=  `<article class="meme-image"> 
-                <img src="${image}" > 
+    images.forEach((image,index) => {
+      strHtml +=  `<article class="meme-image" onclick="onClikedSavedImg(${index})"> 
+                <img src="${image.url}" > 
             </article>`
     });
     document.querySelector('.saved-meme-content').innerHTML = strHtml
 }
-function onClikedSavedImg(el){
+function onClikedSavedImg(index){
     document.querySelector('.saved-meme').classList.add('hide')
     document.querySelector('.meme-editor').classList.remove('hide')
     gCurrPage = document.querySelector('.meme-editor')
     sizeCanvas()
-    renderSaved(el)
+    setMemeToSaved(index)
+    rendermeme()
 }
