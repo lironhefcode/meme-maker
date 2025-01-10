@@ -1,9 +1,10 @@
+@import url(setup/vars.css);
+@import url(setup/fonts.css);
+
 @import url(basics/base.css);
 @import url(basics/layout.css);
 @import url(basics/helpers.css);
 
-
-@import url(setup/vars.css);
 
 
 @import url(components/meme-control.css);
@@ -14,4 +15,3 @@
 @import url(components/savedmemes.css);
 
 @import url(setup/mq.css);
-@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
