@@ -25,7 +25,8 @@
         </div>
     </header>
     <section class="image-gallery">
-        <input class="fillter-meme rounded" placeholder="search" list="memetype" id="memetypes" name="memetypes" oninput="onFillterGallery(this.value)" />
+        <div class="gallery-head">
+        <input class="fillter-meme rounded" placeholder="search" list="memetype" id="memetypes" name="memetypes" onchange="onFillterGallery(this.value)" />
         <datalist id="memetype">
             <option value="funny"></option>
             <option value="happy"></option>
@@ -33,6 +34,10 @@
             <option value="weird"></option>
             <option value="best"></option>
         </datalist>
+        <div class="key-word flex justify-center">
+            <span onclick="onKeyWordClick(this)">funny</span><span onclick="onKeyWordClick(this)">happy</span><span onclick="onKeyWordClick(this)">sad</span><span onclick="onKeyWordClick(this)">weird</span><span onclick="onKeyWordClick(this)">best</span>
+        </div>
+    </div>
         <div class="gallery-content">
            
         </div>

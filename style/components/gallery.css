@@ -6,7 +6,6 @@
 }
 .fillter-meme{
     width: 100%;
-    margin: 20px 0;
     font-size: 1.4em;
     height: 1.4em;
 }
@@ -22,4 +21,15 @@
     font-size: 1.8em;
     color: var(--clr--primary2);
     border: 2px solid black;
+}
+.key-word{
+    background-color: var(--clr-primary3);
+    color: var(--clr--primary2);
+    gap: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; 
 }

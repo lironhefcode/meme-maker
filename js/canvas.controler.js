@@ -7,6 +7,7 @@ function rendermeme() {
     const img = new Image()
     img.src = getImg()
     img.onload = () => {
+       
         const meme = getMeme()
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         let space = 0

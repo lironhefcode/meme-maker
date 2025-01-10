@@ -18,6 +18,7 @@ var gImgs = [
     { id: 17, url: 'imgs/17.jpg', keyword: 'happy' },
     { id: 18, url: 'imgs/18.jpg', keyword: 'sad' }
 ]
+var gKeywordSearchCountMap = {'funny': 20,'happy': 20, 'sad': 20,'weird':20,'best':20} 
 var gMeme = { 
 selectedImgId: 0, 
 selectedLineIdx: 0, 
@@ -29,7 +30,7 @@ const STORAGE_KEY = 'imagedb'
 function saveImage(imgUrl){
     const imgData = loadFromStorage(STORAGE_KEY) 
     imgData.push({'meme':gMeme,'url':imgUrl})
-    console.log(imgData)
+   
     saveToStorage(STORAGE_KEY,imgData)
 }
 function getSavedImages(){
@@ -184,4 +185,9 @@ function addImage(url){
     gImgs.push({ id: gImgs.length+1, url , keyword: 'sad' })
     init()
     gMeme.selectedImgId = gImgs.length
+}
+function updateWordSize(word){
+    return gKeywordSearchCountMap[word]++
+    
+
 }

@@ -70,7 +70,7 @@ function onClikedSavedImg(index){
 
 
 function renderGallery(imgs =  getImages()){
-    console.log(imgs)
+    
     let strHtml =` <label class="file-input-label rounded" for="file-upload">Upload image</label>
             <input type="file" class="file-upload" id="file-upload" oninput="onImgInput(event)">`
     imgs.forEach((image) => {
@@ -83,8 +83,7 @@ function renderGallery(imgs =  getImages()){
 
 
 function onFillterGallery(fillerBy){
-    console.log(fillerBy)
-    console.log(getFillterdImages(fillerBy))
+   
     renderGallery(getFillterdImages(fillerBy))
 }
 
@@ -109,3 +108,10 @@ function loadImageFromInput(ev) {
     
 }
 
+function onKeyWordClick(elWord){
+      const word =  elWord.innerText
+      elWord.style.fontSize = updateWordSize(word) + 'px'
+      
+      document.querySelector('.fillter-meme').value = word
+      onFillterGallery(word)
+}
