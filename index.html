@@ -18,6 +18,7 @@
                 <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery(this)"  >gallery</a></li>
                 <li><a href="#" onclick="chnageMode(this), goToEditor(this)" class="editor">editor</a></li>
                 <li><a href="# " class="save" onclick="goToSaved(this)">save</a></li>
+                <li><a href="# " class="save" onclick="goToEditor(),onRandom()">Random</a></li>
               </ul>
             </nav>
             <button class="btn-toggle-menu" onclick="toggleMenu()">&#9776;</button>
@@ -95,6 +96,11 @@
                     <button class="changeLine rounded" onclick="onChangeLine()">&#8645;</button>
                     
                 </div>
+                <div class="emojis flex">
+                    <button class="emoji1" onclick="onAddEmoji(this)">😂</button>
+                    <button class="emoji2" onclick="onAddEmoji(this)">🤢</button>
+                    <button class="emoji2" onclick="onAddEmoji(this)">😡</button>
+                </div>
                 <div class="font-ediotr">
                     
                     <button class="increase btn-font" onclick="onIncreaseFont()">&#128474;</button>
@@ -131,9 +137,10 @@
 
 
     <script src="https://kit.fontawesome.com/64336c7dd3.js" crossorigin="anonymous"></script>
+    <script src="js/utils.js"></script>
     <script src="/js/meme-storage.js"></script>
     <script src="js/meme-service.js"></script>
-    <script src='js/gallarey-controler.js'></script>
+    <script src='js/main.js'></script>
     <script src="js/canvas.controler.js"></script>
 </body>
 

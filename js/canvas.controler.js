@@ -193,3 +193,14 @@ function onSaveImage() {
 function renderSaved(ClikedImg) {
     gCtx.drawImage(ClikedImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
+function onRandom(){
+   randomMeme()
+   sizeCanvas()
+   rendermeme()
+}
+function onAddEmoji(elbutton){
+   onAddLine()
+   addLine(elbutton.innerText)
+   changeValues()
+   rendermeme()
+}

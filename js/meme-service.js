@@ -57,7 +57,7 @@ function selectedImg(src){
 function getImg(){
     return gImgs.find(img => gMeme.selectedImgId ===  img.id).url
 }
-function addLine(txt,){
+function addLine(txt){
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 function setFont(font){
@@ -163,9 +163,12 @@ function aliganRight(width,ctx){
         line.location.xStart = width- (ctx.measureText(line.txt).width)
     )
 }
-
-
 function setMemeToSaved(idx){
     const savedImages  = loadFromStorage(STORAGE_KEY)
     gMeme = savedImages[idx].meme
+}
+function randomMeme(){
+    init()
+    gMeme.lines[gMeme.selectedLineIdx].txt = getRandomText()
+    gMeme.selectedImgId = getRandomInt(0,gImgs.length-1)
 }

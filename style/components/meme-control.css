@@ -44,7 +44,13 @@
     border-radius: 10px;
     width: 100%;
 }
-
+.meme-control .emojis button{
+    font-size: 1.6em;
+    background-color: var(--clr-primary3);
+    color: var(--clr--primary2);
+    border-radius: 10px;
+    width: 50%;
+}
 .font-ediotr {
 
     display: grid;
