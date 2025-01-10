@@ -8,93 +8,48 @@
     <link href="style/style.css" rel="stylesheet">
 </head>
 
-<body class="main-layout"   onresize="sizeCanvas()"   >
+<body class="main-layout" onload="onIinit()" onresize="sizeCanvas()">
 
     <header class="header full main-layout ">
         <div class="header-content flex  align-center space-between">
             <div class="title">Meme Maker</div>
             <nav class="main-nav ">
-              <ul class="nav list flex clean-list">
-                <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery(this)"  >gallery</a></li>
-                <li><a href="#" onclick="chnageMode(this), goToEditor(this)" class="editor">editor</a></li>
-                <li><a href="# " class="save" onclick="goToSaved(this)">save</a></li>
-                <li><a href="# " class="save" onclick="goToEditor(),onRandom()">Random</a></li>
-              </ul>
+                <ul class="nav list flex clean-list">
+                    <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery(this)">gallery</a></li>
+                    <li><a href="#" onclick="chnageMode(this), goToEditor(this)" class="editor">editor</a></li>
+                    <li><a href="# " class="save" onclick="goToSaved(this)">save</a></li>
+                    <li><a href="# " class="save" onclick="goToEditor(),onRandom()">Random</a></li>
+                </ul>
             </nav>
             <button class="btn-toggle-menu" onclick="toggleMenu()">&#9776;</button>
         </div>
     </header>
     <section class="image-gallery">
+        <input class="fillter-meme rounded" placeholder="search" list="memetype" id="memetypes" name="memetypes" oninput="onFillterGallery(this.value)" />
+        <datalist id="memetype">
+            <option value="funny"></option>
+            <option value="happy"></option>
+            <option value="sad"></option>
+            <option value="weird"></option>
+            <option value="best"></option>
+        </datalist>
         <div class="gallery-content">
-            <article class="meme-image">
-                <img src="imgs/1.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/2.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/3.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/4.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/5.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/6.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/7.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/8.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/9.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/10.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/11.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/12.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/13.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/14.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/15.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/16.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/17.jpg" onclick="onClickImage(this)">
-            </article>
-            <article class="meme-image">
-                <img src="imgs/18.jpg" onclick="onClickImage(this)">
-            </article>
+
         </div>
     </section>
     <section class="meme-editor   hide">
         <div class="meme-ediror-content flex space-between  ">
             <div class="canvas-container">
-            <canvas  onmousedown="onDown(event)" onmousemove="onMove(event)" onmouseup="onUp()"
-            ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()"></canvas>
-        </div>
+                <canvas onmousedown="onDown(event)" onmousemove="onMove(event)" onmouseup="onUp()"
+                    ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()"></canvas>
+            </div>
             <div class="meme-control flex space-between">
                 <input type="text" class="Meme-text rounded" oninput="onAddtext(this.value)">
                 <div class="group1">
                     <button class="deleteLine rounded" onclick="onDelteLine()">&#120;</button>
                     <button class="add-line rounded" onclick="onAddLine()">&#43;</button>
                     <button class="changeLine rounded" onclick="onChangeLine()">&#8645;</button>
-                    
+
                 </div>
                 <div class="emojis flex">
                     <button class="emoji1" onclick="onAddEmoji(this)">😂</button>
@@ -102,12 +57,15 @@
                     <button class="emoji2" onclick="onAddEmoji(this)">😡</button>
                 </div>
                 <div class="font-ediotr">
-                    
+
                     <button class="increase btn-font" onclick="onIncreaseFont()">&#128474;</button>
                     <button class="decrease btn-font" onclick="oDencreaseFont()">&#128475;</button>
-                    <button class="aligan-right btn-font" onclick="onAliganLeft()"><i class="fa-solid fa-align-left"></i></button>
-                    <button class="aligan-center btn-font" onclick="onAliganCenter()"><i class="fa-solid fa-align-center"></i></button>
-                    <button class="aligan-left btn-font" onclick="onAliganRight()"><i class="fa-solid fa-align-right"></i></button>
+                    <button class="aligan-right btn-font" onclick="onAliganLeft()"><i
+                            class="fa-solid fa-align-left"></i></button>
+                    <button class="aligan-center btn-font" onclick="onAliganCenter()"><i
+                            class="fa-solid fa-align-center"></i></button>
+                    <button class="aligan-left btn-font" onclick="onAliganRight()"><i
+                            class="fa-solid fa-align-right"></i></button>
                     <input type="color" class="color-picker btn-font" onchange="onchangeColor(this.value)">
                     <select class="font-value btn-font" onchange="onChangeFont(this.value)">
                         <option value="arial">arial</option>
@@ -118,14 +76,14 @@
                     </select>
                 </div>
                 <div class="btn-group2 flex">
-                <button class="save-image" onclick="onSaveImage()">Save</button>
-                <a href="#" class="downLoad rounded" onclick="onDownloadMeme(this)">download</a>
-                <form action="" method="POST" enctype="multipart/form-data" onsubmit="onShare(event)">
-                    <input name="img" id="imgData" type="hidden" />
-                    <button class="share" type="submit"><i class="fa-brands fa-facebook-f"></i></button>
-                  </form>
+                    <button class="save-image" onclick="onSaveImage()">Save</button>
+                    <a href="#" class="downLoad rounded" onclick="onDownloadMeme(this)">download</a>
+                    <form action="" method="POST" enctype="multipart/form-data" onsubmit="onShare(event)">
+                        <input name="img" id="imgData" type="hidden" />
+                        <button class="share" type="submit"><i class="fa-brands fa-facebook-f"></i></button>
+                    </form>
+                </div>
             </div>
-        </div>
         </div>
     </section>
     <section class="saved-meme hide">

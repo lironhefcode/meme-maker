@@ -1,23 +1,23 @@
 var gImgs = [
-    { id: 1, url: 'imgs/1.jpg', keywords: ['funny', 'cat'] },
-    { id: 2, url: 'imgs/2.jpg', keywords: ['funny', 'cat'] },
-    { id: 3, url: 'imgs/3.jpg', keywords: ['funny', 'cat'] },
-    { id: 4, url: 'imgs/4.jpg', keywords: ['funny', 'cat'] },
-    { id: 5, url: 'imgs/5.jpg', keywords: ['funny', 'dog'] },
-    { id: 6, url: 'imgs/6.jpg', keywords: ['cute', 'cat'] },
-    { id: 7, url: 'imgs/7.jpg', keywords: ['funny', 'cat', 'sleep'] },
-    { id: 8, url: 'imgs/8.jpg', keywords: ['adorable', 'dog'] },
-    { id: 9, url: 'imgs/9.jpg', keywords: ['funny', 'cat'] },
-    { id: 10, url: 'imgs/10.jpg', keywords: ['playful', 'dog'] },
-    { id: 11, url: 'imgs/11.jpg', keywords: ['funny', 'cat'] },
-    { id: 12, url: 'imgs/12.jpg', keywords: ['lazy', 'cat'] },
-    { id: 13, url: 'imgs/13.jpg', keywords: ['curious', 'dog'] },
-    { id: 14, url: 'imgs/14.jpg', keywords: ['funny', 'cat', 'jump'] },
-    { id: 15, url: 'imgs/15.jpg', keywords: ['cute', 'rabbit'] },
-    { id: 16, url: 'imgs/16.jpg', keywords: ['funny', 'cat'] },
-    { id: 17, url: 'imgs/17.jpg', keywords: ['playful', 'kitten'] },
-    { id: 18, url: 'imgs/18.jpg', keywords: ['adorable', 'puppy'] }
-  ]
+    { id: 1, url: 'imgs/1.jpg', keyword: 'funny' },
+    { id: 2, url: 'imgs/2.jpg', keyword: 'funny' },
+    { id: 3, url: 'imgs/3.jpg', keyword: 'funny' },
+    { id: 4, url: 'imgs/4.jpg', keyword: 'happy' },
+    { id: 5, url: 'imgs/5.jpg', keyword: 'happy' },
+    { id: 6, url: 'imgs/6.jpg', keyword: 'happy' },
+    { id: 7, url: 'imgs/7.jpg', keyword: 'sad' },
+    { id: 8, url: 'imgs/8.jpg', keyword: 'sad' },
+    { id: 9, url: 'imgs/9.jpg', keyword: 'sad' },
+    { id: 10, url: 'imgs/10.jpg', keyword: 'weird' },
+    { id: 11, url: 'imgs/11.jpg', keyword: 'weird' },
+    { id: 12, url: 'imgs/12.jpg', keyword: 'weird' },
+    { id: 13, url: 'imgs/13.jpg', keyword: 'best' },
+    { id: 14, url: 'imgs/14.jpg', keyword: 'best' },
+    { id: 15, url: 'imgs/15.jpg', keyword: 'best' },
+    { id: 16, url: 'imgs/16.jpg', keyword: 'funny' },
+    { id: 17, url: 'imgs/17.jpg', keyword: 'happy' },
+    { id: 18, url: 'imgs/18.jpg', keyword: 'sad' }
+]
 var gMeme = { 
 selectedImgId: 0, 
 selectedLineIdx: 0, 
@@ -171,4 +171,11 @@ function randomMeme(){
     init()
     gMeme.lines[gMeme.selectedLineIdx].txt = getRandomText()
     gMeme.selectedImgId = getRandomInt(0,gImgs.length-1)
+}
+function getImages(){
+    return gImgs
+}
+
+function getFillterdImages(fillterby){
+    return gImgs.filter(img => img.keyword.includes(fillterby))
 }

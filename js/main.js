@@ -2,7 +2,9 @@
 var gCurrNav =  document.querySelector('.gallery')
 var gCurrPage =  document.querySelector('.image-gallery')
 
-
+function onIinit(){
+    renderGallery()
+}
 
 function onClickImage(img){
     
@@ -63,4 +65,21 @@ function onClikedSavedImg(index){
     sizeCanvas()
     setMemeToSaved(index)
     rendermeme()
+}
+
+
+
+function renderGallery(imgs =  getImages()){
+    let strHtml =''
+    imgs.forEach((image) => {
+      strHtml +=  `<article class="meme-image" > 
+                <img src="${image.url}" onclick="onClickImage(this)" > 
+            </article>`
+    });
+    document.querySelector('.gallery-content').innerHTML = strHtml
+}
+
+
+function onFillterGallery(fillerBy){
+    renderGallery(getFillterdImages(fillerBy))
 }
