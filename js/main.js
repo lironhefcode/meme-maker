@@ -70,7 +70,9 @@ function onClikedSavedImg(index){
 
 
 function renderGallery(imgs =  getImages()){
-    let strHtml =''
+    console.log(imgs)
+    let strHtml =` <label class="file-input-label rounded" for="file-upload">Upload image</label>
+            <input type="file" class="file-upload" id="file-upload" oninput="onImgInput(event)">`
     imgs.forEach((image) => {
       strHtml +=  `<article class="meme-image" > 
                 <img src="${image.url}" onclick="onClickImage(this)" > 
@@ -81,5 +83,29 @@ function renderGallery(imgs =  getImages()){
 
 
 function onFillterGallery(fillerBy){
+    console.log(fillerBy)
+    console.log(getFillterdImages(fillerBy))
     renderGallery(getFillterdImages(fillerBy))
 }
+
+
+function onImgInput(ev) {
+    loadImageFromInput(ev)
+}
+
+function loadImageFromInput(ev) {
+    // document.querySelector('.share-container').innerHTML = ''
+    const reader = new FileReader()
+
+    reader.onload = function (event) {
+        const img = new Image()
+        img.onload = () => {
+            goToEditor()
+            addToCanvas(img.src)
+        }
+        img.src = event.target.result
+    }
+    reader.readAsDataURL(ev.target.files[0])
+    
+}
+

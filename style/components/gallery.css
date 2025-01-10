@@ -10,3 +10,16 @@
     font-size: 1.4em;
     height: 1.4em;
 }
+.file-upload{
+    display: none;
+}
+.file-input-label{
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    color: var(--clr--primary2);
+    border: 2px solid black;
+}

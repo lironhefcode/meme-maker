@@ -204,3 +204,8 @@ function onAddEmoji(elbutton){
    changeValues()
    rendermeme()
 }
+function addToCanvas(url){
+    addImage(url)
+    sizeCanvas()
+    rendermeme()
+}

@@ -133,6 +133,7 @@ function setLineDragOff(){
     gMeme.lines[gMeme.selectedLineIdx].isDrag = false
 }
 function isDrag(){
+    if (gMeme.lines.length===0) return
    return gMeme.lines[gMeme.selectedLineIdx].isDrag
 }
 function changeStartLocation(xStart,yStart){
@@ -178,4 +179,9 @@ function getImages(){
 
 function getFillterdImages(fillterby){
     return gImgs.filter(img => img.keyword.includes(fillterby))
+}
+function addImage(url){
+    gImgs.push({ id: gImgs.length+1, url , keyword: 'sad' })
+    init()
+    gMeme.selectedImgId = gImgs.length
 }
