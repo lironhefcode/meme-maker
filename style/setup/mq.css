@@ -1,3 +1,8 @@
+@media (max-width:400px) {
+  .canvas-container{
+    width: calc(100vw );
+  }
+}
 @media (max-width:650px) 
 {
 
