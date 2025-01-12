@@ -1,8 +1,9 @@
 
 @media (max-width:650px) 
 {
-
+ 
   .meme-control{
+    margin-top: 20px;
     font-size: 1.2em;
   }
   .header {
