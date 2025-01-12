@@ -24,4 +24,8 @@
     background-color: var(--clr-primary3);
     box-shadow: inset 0px -6px 0 var(--clr-primary2);
     cursor: default;
+    border-radius: 20px;
+}
+input {
+    color: #000; /* Black text for user input */
 }

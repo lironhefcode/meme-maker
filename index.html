@@ -18,14 +18,14 @@
                     <li><a href="#" class="active gallery" onclick="chnageMode(this),goToGallery(this)">gallery</a></li>
                     <li><a href="#" onclick="chnageMode(this), goToEditor(this)" class="editor">editor</a></li>
                     <li><a href="# " class="save" onclick="goToSaved(this)">save</a></li>
-                    <li><a href="# " class="save" onclick="goToEditor(),onRandom()">Random</a></li>
+                    <li><a href="# " class="" onclick="goToEditor(),onRandom()">Random</a></li>
                 </ul>
             </nav>
             <button class="btn-toggle-menu" onclick="toggleMenu()">&#9776;</button>
         </div>
     </header>
     <section class="image-gallery">
-        <div class="gallery-head">
+        <div class="gallery-head flex ">
         <input class="fillter-meme rounded" placeholder="search" list="memetype" id="memetypes" name="memetypes" onchange="onFillterGallery(this.value)" />
         <datalist id="memetype">
             <option value="funny"></option>
@@ -34,7 +34,7 @@
             <option value="weird"></option>
             <option value="best"></option>
         </datalist>
-        <div class="key-word flex justify-center">
+        <div class="key-word rounded  flex justify-center ">
             <span onclick="onKeyWordClick(this)">funny</span><span onclick="onKeyWordClick(this)">happy</span><span onclick="onKeyWordClick(this)">sad</span><span onclick="onKeyWordClick(this)">weird</span><span onclick="onKeyWordClick(this)">best</span>
         </div>
     </div>
@@ -43,7 +43,7 @@
         </div>
     </section>
     <section class="meme-editor   hide">
-        <div class="meme-ediror-content flex space-between  ">
+        <div class="meme-ediror-content flex space-evenly  ">
             <div class="canvas-container">
                 <canvas onmousedown="onDown(event)" onmousemove="onMove(event)" onmouseup="onUp()"
                     ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()"></canvas>

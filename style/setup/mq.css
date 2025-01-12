@@ -10,7 +10,7 @@
 }
   .header .btn-toggle-menu {
       display: block;
-      color: #000;
+      color: var(--clr-primary2);
   }
   
   .main-nav {
@@ -53,6 +53,15 @@
 
 
 @media (min-width:650px) {
+  .gallery-head{
+    flex-direction: row;
+    align-items: flex-end;
+    
+}
+.fillter-meme,.key-word{
+  width: 50%;
+}
+
 
   .meme-control{
     font-size: 1.4em;

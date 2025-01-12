@@ -74,8 +74,8 @@ function renderGallery(imgs =  getImages()){
     let strHtml =` <label class="file-input-label rounded" for="file-upload">Upload image</label>
             <input type="file" class="file-upload" id="file-upload" oninput="onImgInput(event)">`
     imgs.forEach((image) => {
-      strHtml +=  `<article class="meme-image" > 
-                <img src="${image.url}" onclick="onClickImage(this)" > 
+      strHtml +=  `<article class="meme-image " > 
+                <img src="${image.url}" class="rounded" onclick="onClickImage(this)" > 
             </article>`
     });
     document.querySelector('.gallery-content').innerHTML = strHtml

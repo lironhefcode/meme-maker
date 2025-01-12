@@ -11,6 +11,9 @@
 .flex.space-between {
     justify-content: space-between;
 }
+.flex.space-evenly {
+    justify-content: space-evenly;
+}
 .clean-list {
     margin: 0;
     padding: 0;
