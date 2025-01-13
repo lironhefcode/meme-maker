@@ -187,7 +187,6 @@ function addImage(url){
     gMeme.selectedImgId = gImgs.length
 }
 function updateWordSize(word){
-    return gKeywordSearchCountMap[word]++
-    
+    return gKeywordSearchCountMap[word]++ 
 
 }
